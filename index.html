@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2022826284942562"crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>지금, 요즘날씨 옷</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&family=Quicksand:wght@300&display=swap');
+
+    * { margin: 0;
+        padding: 0; 
+        font-family: 'Noto Sans KR', sans-serif;
+        font-family: 'Quicksand', sans-serif;}
+
+    body { 
+        background: #afe0ff; 
+    }
+
+    h1{
+        text-align: center;
+        padding-top: 70px;
+        font-size: 50px;
+        font-weight: 300;
+    }
+    h2{
+        text-align: center;
+        padding-top: 15px;
+        padding-bottom: 0;
+        font-weight: 300;
+        font-size: 23px;
+        line-height: 160%;
+    }
+    p{
+        text-align: center;
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 160%;
+        padding-bottom: 30px;
+    }
+    footer{
+        position: relative;
+
+        border: none;
+        border-radius: 10px;
+        
+        margin: 0 10px 15px 10px;
+
+        padding-top: 15px;
+        padding-bottom: 15px;
+
+        background-color: #f1f1f1;
+        line-height: 160%;
+        text-decoration: none;
+        color: rgba(0, 0, 0, 0.809);
+
+        font-size: 15px;
+        font-weight: 300;
+
+        text-align: center;
+    }
+    footer > a{
+        color: rgba(0, 0, 0, 0.809);
+        text-decoration: none;
+    }
+    .warning{
+        font-size: 15px;
+        line-height: 160%;
+    }
+
+    .person {
+    position: relative;
+    margin: 0 auto 0 auto;
+    width: 300px;
+    height: 470px;
+    border: none;
+    transform: scale(1);
+    }
+
+    .face {
+    left: 100px;
+    top: 40px;
+    width: 100px;
+    height: 100px;
+    background: #ffc8b3;
+    border-radius: 50px 50px 50px 50px;
+    overflow: hidden;
+    position: relative;
+    }
+
+    .hair{
+        background: black;
+        position: absolute;
+        left: 100px;
+        top: 40px;
+        width: 100px;
+        height: 45px;
+        border-radius: 50px 50px 0 0;
+    }
+
+    .eye {
+    background: black;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    position: absolute;
+    }
+
+    .eye_left { left: 25px; top: 50px; }
+    .eye_right { left: 63px; top: 50px; }
+
+    .mouth {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 3px solid #db4e61;
+    position: absolute;
+    top: 60px;
+    left: 37px;
+    clip-path: polygon(0 70%, 100% 70%, 100% 100%, 0 100%);
+    }
+
+    .neck {
+    width: 20px;
+    height: 45px;
+    background: #ffc8b3;
+    position: absolute;
+    top: 120px;
+    left: 140px;
+    z-index: -2;
+    border-radius: 10px;
+    }
+
+    .torso {
+    width: 120px;
+    height: 130px;
+    background: green;
+    position: absolute;
+    top: 150px;
+    left: 90px;
+    z-index: -3;
+    border-radius: 50px 50px 10px 10px;
+    }
+
+    .arm {
+    position: absolute;
+    width: 20px;
+    height: 90px;
+    background: #ffc8b3;
+    border-radius: 10px;
+    z-index: -2;
+    }
+    .arm_left {
+    left: 85px;
+    top: 190px;
+    transform-origin: 50% 0%;
+    rotate: 30deg;
+    }
+    .arm_right {
+    left: 195px;
+    top: 190px;
+    transform-origin: 50% 0%;
+    rotate: 330deg;
+    }
+    .sleeve {
+    position: absolute;
+    height: 85px;
+    border-radius: 10px;
+    z-index: -1;
+    }
+    .sleeve_left {
+    left: 85px;
+    top: 185px;
+    width: 25px;
+    transform-origin: 50% 0%;
+    rotate: 30deg;
+    visibility: visible;
+    background: green;
+    }
+    .sleeve_right {
+    left: 190px;
+    top: 185px;
+    width: 25px;
+    transform-origin: 50% 0%;
+    rotate: 330deg;
+    visibility: visible;
+    background: green;
+    }
+
+    .leg {
+    position: absolute;
+    width: 20px;
+    height: 150px;
+    background: #ffc8b3;
+    border-radius: 10px;
+    z-index: -5;
+    }
+    .leg_left {
+    left: 105px;
+    top: 280px;
+    }
+    .leg_right {
+    left: 175px;
+    top: 280px;
+    }
+
+    .trouser {
+    position: absolute;
+    width: 58px;
+    background: gray;
+    z-index: -4;
+    }
+    .tr_left {
+    left: 95px;
+    top: 275px;
+    height: 70px;
+    transform-origin: 50% 0%;
+    rotate: 5deg;
+    }
+    .tr_right {
+    left: 147px;
+    height: 70px;
+    top: 275px;
+    transform-origin: 50% 0%;
+    rotate: 355deg;
+    }
+
+    .foot {
+    background: rgb(254, 254, 242);
+    width: 40px;
+    height: 21px;
+    position: absolute;
+    z-index: -5;
+    }
+
+    .foot_left {
+        left: 89px;
+        top: 409px;
+        border-radius: 50% 10% 10% 10%;
+    }
+    .foot_right {
+        left: 171px;
+        top: 409px;
+        border-radius: 10% 50% 10% 10%;
+    }
+    .coat{
+    width: 135px;
+    height: 210px;
+    background: rgb(197, 164, 121);
+    position: absolute;
+    top: 150px;
+    left: 82px;
+    z-index: -3;
+    border-radius: 50px 50px 5px 5px;
+    visibility: hidden;
+    }
+    .coat > .inner{
+        position: inherit;
+        left: 41.5px;
+        width: 0;
+        height: 0;
+        border-bottom: 100px solid black;
+        border-left: 27px solid transparent;
+        border-right: 27px solid transparent;
+        transform: rotate(180deg);
+    }
+    .coat > .buttonUp{
+        left: 62px;
+        top: 120px;
+        background: black;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        position: inherit;
+    }
+    .coat > .buttonDown{
+        left: 62px;
+        top: 160px;
+        background: black;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        position: inherit;
+    }
+    .outerDown{
+        width: 150px;
+        height: 185px;
+        background: rgb(228, 194, 0);
+        position: absolute;
+        top: 150px;
+        left: 75px;
+        z-index: -1;
+        border-radius: 50px 50px 10px 10px;
+        visibility: hidden;
+    }
+    .outerDown > .top{
+        position: inherit;
+        width: 150px;
+        height: 50px;
+        border-radius: 50px 50px 0px 0px;
+        background-color: black;
+    }
+    .outerDown > .lineLeft{
+        left: 50px;
+        top: 67px;
+        background: black;
+        width: 7px;
+        height: 60px;
+        border-radius: 5px;
+        position: inherit;
+    }.outerDown > .lineRight{
+        left: 95px;
+        top: 67px;
+        background: black;
+        width: 7px;
+        height: 60px;
+        border-radius: 5px;
+        position: inherit;
+    }
+</style>
+<script>
+
+    lat = 37.5666805;
+    lon = 126.9784147;
+    let date = new Date();
+
+    let year = date.getFullYear();
+    let month = ('0' + (date.getMonth() + 1)).slice(-2);
+    let day = ('0' + date.getDate()).slice(-2);
+
+    let hour = ('0' + (date.getHours())).slice(-2);
+    let minute = ('0' + date.getMinutes()).slice(-2);
+    if(minute <= 40){
+            hour = ('0' + (hour - 1)).slice(-2);
+            minute = 59;
+    }
+
+    now_time = hour + minute;
+
+    baseDate = year + month + day;
+
+    (function CurrentLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+
+                lat = position.coords.latitude;
+                lon = position.coords.longitude;
+            });
+        } else {
+            alert("현재 위치를 알 수 없습니다")
+    }})();
+
+    (adsbygoogle = window.adsbygoogle || []).push({});
+
+    function feelsLike(t, v){
+        v = v * 60 * 60 / 1000;
+        if(v == 0){v = 0.1};
+        S = 13.12+0.6215*t-11.37*Math.pow(v,0.16)+0.3965*t*Math.pow(v,0.16);
+        return S;
+    }
+    
+    function clothStyle(temp){
+        if(temp >= 25){//반팔, 반바지
+            $(function(){
+                $('#sleeve_left').css('visibility', 'hidden');
+                $('#sleeve_right').css('visibility', 'hidden');
+                $('#tr_left').css('height', '70px');
+                $('#tr_right').css('height', '70px');
+                $('#outerDown').css('visibility', 'hidden');
+                $('#coat').css('visibility', 'hidden');
+                $('p').empty();
+                $('p').append(`더운 날씨에요</br>얇은 반팔, 반바지를 추천드려요`);
+            })
+        }else if(temp >= 19){//반팔, 7부바지
+            $(function(){
+                $('#sleeve_left').css('visibility', 'hidden');
+                $('#sleeve_right').css('visibility', 'hidden');
+                $('#tr_left').css('height', '110px');
+                $('#tr_right').css('height', '110px');
+                $('#outerDown').css('visibility', 'hidden');
+                $('#coat').css('visibility', 'hidden');
+                $('p').empty();
+                $('p').append(`약간 더운 날씨에요</br>반팔, 7부 바지를 추천드려요</br>얇은 가디건도 괜찮아요`);
+            })
+        }else if(temp >= 14){//긴바지, 맨투맨
+            $(function(){
+                $('#sleeve_left').css({
+                    'visibility':'visible',
+                    'background':'green',
+                    'left':'190px',
+                    'width':'25px'
+                });
+                $('#sleeve_right').css({
+                    'visibility':'visible',
+                    'background':'green',
+                    'left':'85px',
+                    'width':'25px'
+                });
+                $('#tr_left').css('height', '137px');
+                $('#tr_right').css('height', '137px');
+                $('#outerDown').css('visibility', 'hidden');
+                $('#coat').css('visibility', 'hidden');
+                $('p').empty();
+                $('p').append(`맨투맨, 긴바지를 추천드려요</br>니트나 얇은 가디건도 괜찮아요`);
+            })
+        }else if(temp >= 8){//긴바지, 코트
+            $(function(){
+                $('#sleeve_left').css({
+                    'visibility':'visible',
+                    'background':'rgb(197, 164, 121)',
+                    'left':'190px',
+                    'width':'25px'
+                });
+                $('#sleeve_right').css({
+                    'visibility':'visible',
+                    'background':'rgb(197, 164, 121)',
+                    'left':'85px',
+                    'width':'25px'
+                });
+                $('#outerDown').css('visibility', 'hidden');
+                $('#coat').css('visibility', 'visible');
+                $('#tr_left').css('height', '137px');
+                $('#tr_right').css('height', '137px');
+                $('p').empty();
+                $('p').append(`조금 쌀쌀한 날씨에요</br>후드티나 후리스를 추천드려요</br>코트나 가디건도 괜찮아요`);
+            })
+        }else{//긴바지, 패딩
+            $(function(){
+                $('#sleeve_left').css({
+                    'visibility':'visible',
+                    'background':'rgb(228, 194, 0)',
+                    'left':'185px',
+                    'width':'40px'
+                });
+                $('#sleeve_right').css({
+                    'visibility':'visible',
+                    'background':'rgb(228, 194, 0)',
+                    'left':'75px',
+                    'width':'40px'
+                });
+                $('#tr_left').css('height', '137px');
+                $('#tr_right').css('height', '137px');
+                $('#coat').css('visibility', 'hidden');
+                $('#outerDown').css('visibility', 'visible');
+                $('p').empty();
+                $('p').append(`추운 날씨에요</br>패딩을 추천드려요</br>장갑이나 귀마개도 좋아요`);
+            })
+        }
+    }
+
+    function weather(){
+
+        var nx = dfs_xy_conv(lat, lon)['x'];
+        var ny = dfs_xy_conv(lat, lon)['y'];
+
+        var url = 'https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtNcst';
+        var queryParams='?'+encodeURIComponent('serviceKey')+'='+'X081vRnr%2ByrA3sAVqHsY9tExB9Pjp3wRNoJ29v9xmEFB4oF25Iz71SJ1pe6ZXEwkx2P%2FdL1%2FSxEBQPrHWUS6Wg%3D%3D'; /*ServiceKey*/
+        queryParams += '&' + encodeURIComponent('dataType') + '=' + encodeURIComponent('JSON');
+        queryParams += '&' + encodeURIComponent('base_date') + '=' + encodeURIComponent(baseDate);
+        queryParams += '&' + encodeURIComponent('base_time') + '=' + encodeURIComponent(now_time);
+        queryParams += '&' + encodeURIComponent('nx') + '=' + encodeURIComponent(nx);
+        queryParams += '&' + encodeURIComponent('ny') + '=' + encodeURIComponent(ny);
+
+        fetch(url+queryParams).then(res => res.json()).then((data) => {
+            let items = data['response']['body']['items']['item'];
+            for(let i=0; i<items.length; i++){
+                if(items[i]['category'] == 'T1H'){
+                    T = (items[i]['obsrValue']);
+                }
+                if(items[i]['category'] == 'WSD'){
+                    V = (items[i]['obsrValue']);
+                }
+            }
+            console.log('T = ', T, 'V = ', V, 'feelsLike = ', feelsLike(T, V));
+            $('#temp').empty();
+            $('#feelsLike').empty();
+            let temp_html = `${T} &#8451;`
+            $('#temp').append(temp_html);
+            let feelsLike_html = `체감온도  ${feelsLike(T, V).toFixed(2)} &#8451;
+                                    <h2 class = "warning">위치 동의 후 2초 뒤의 데이터가 정확해요<br/>개발자를 클릭하면 데이터를 새로고침할 수 있어요</h2>`
+            $('#feelsLike').append(feelsLike_html);
+            $('.p').empty();
+            clothStyle(feelsLike(T, V));
+        })};
+
+    var RE = 6371.00877;
+    var GRID = 5.0;
+    var SLAT1 = 30.0;
+    var SLAT2 = 60.0;
+    var OLON = 126.0;
+    var OLAT = 38.0;
+    var XO = 43;
+    var YO = 136;
+
+    function dfs_xy_conv(v1, v2) {
+        var DEGRAD = Math.PI / 180.0;
+        var RADDEG = 180.0 / Math.PI;
+
+        var re = RE / GRID;
+        var slat1 = SLAT1 * DEGRAD;
+        var slat2 = SLAT2 * DEGRAD;
+        var olon = OLON * DEGRAD;
+        var olat = OLAT * DEGRAD;
+
+        var sn = Math.tan(Math.PI * 0.25 + slat2 * 0.5) / Math.tan(Math.PI * 0.25 + slat1 * 0.5);
+        sn = Math.log(Math.cos(slat1) / Math.cos(slat2)) / Math.log(sn);
+        var sf = Math.tan(Math.PI * 0.25 + slat1 * 0.5);
+        sf = Math.pow(sf, sn) * Math.cos(slat1) / sn;
+        var ro = Math.tan(Math.PI * 0.25 + olat * 0.5);
+        ro = re * sf / Math.pow(ro, sn);
+        var rs = {};
+        rs['lat'] = v1;
+        rs['lng'] = v2;
+        var ra = Math.tan(Math.PI * 0.25 + (v1) * DEGRAD * 0.5);
+        ra = re * sf / Math.pow(ra, sn);
+        var theta = v2 * DEGRAD - olon;
+        if (theta > Math.PI) theta -= 2.0 * Math.PI;
+        if (theta < -Math.PI) theta += 2.0 * Math.PI;
+        theta *= sn;
+        rs['x'] = Math.floor(ra * Math.sin(theta) + XO + 0.5);
+        rs['y'] = Math.floor(ro - ra * Math.cos(theta) + YO + 0.5);
+        
+        return rs;
+    }
+</script>
+<body>
+    <h1 id="temp"></h1>
+    <h2 id="feelsLike">개발자를 클릭해보세요</br>온도별 옷을 알 수 있어요</h2>
+    <div class="person" onclick="weather();">
+        <div class="face">
+            <div class="eye_left eye"></div>
+            <div class="eye_right eye"></div>
+            <div class="mouth"></div>
+        </div>
+        <div class="hair"></div>
+        <div class="neck"></div>
+        <div class="torso"></div>
+        <div class="arm_left arm" id="arm_left"></div>
+        <div class="arm_right arm" id="arm_right"></div>
+        <div class="sleeve_left sleeve" id="sleeve_right"></div>
+        <div class="sleeve_right sleeve" id="sleeve_left"></div>
+        <div class="leg_left leg" ></div>
+        <div class="leg_right leg"></div>
+        <div class="tr_left trouser" id="tr_left"></div>
+        <div class="tr_right trouser" id="tr_right"></div>
+        <div class="foot_left foot"></div>
+        <div class="foot_right foot"></div>
+        <div class="umbrella" id="umbrella"></div>
+        <div class="coat" id="coat">
+            <div class="inner"></div>
+            <div class="buttonUp"></div>
+            <div class="buttonDown"></div>
+        </div>
+        <div class="outerDown" id="outerDown">
+            <div class="top"></div>
+            <div class="lineLeft"></div>
+            <div class="lineRight"></div>
+        </div>
+    </div>
+    <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-format="fluid"
+        data-ad-layout-key="-fb+64+31-d5+c4"
+        data-ad-client="ca-pub-2022826284942562"
+        data-ad-slot="1244333365">
+    </ins>
+    <p></p>
+    <footer>
+        <a href="https://www.instagram.com/pjsc0903/">JONGSEONG PARK.</a>
+        <span>&nbsp;ALL RIGHTS RESERVED.</br>기상청에서 제공한 API를 활용했습니다.</span>
+    </footer>
+</body>
+</html>
