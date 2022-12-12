@@ -1,0 +1,3 @@
+User-agent: *
+Allow:/
+Sitemap: https://clothes-by-weather.netlify.app/sitemap.xml
